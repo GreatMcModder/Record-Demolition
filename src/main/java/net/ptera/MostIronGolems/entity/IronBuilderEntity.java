@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 public class IronBuilderEntity extends PathAwareEntity {
     public AnimationState build = new AnimationState();
-    public TrackedData<Integer> BUILD_TIME = DataTracker.registerData(IronBuilderEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    public static final TrackedData<Integer> BUILD_TIME = DataTracker.registerData(IronBuilderEntity.class, TrackedDataHandlerRegistry.INTEGER);
     public IronBuilderEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
     }
