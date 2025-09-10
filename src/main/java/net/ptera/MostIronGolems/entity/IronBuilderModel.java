@@ -80,8 +80,9 @@ public class IronBuilderModel extends SinglePartEntityModel<IronBuilderEntity> {
 	}
 	@Override
 	public void setAngles(IronBuilderEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.builder.setAngles(entity.getPitch(),entity.getYaw(),0);
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
-		animateMovement(IronBuilderModelAnimation.walk,limbSwing,limbSwingAmount,1.5F,1.5F);
+		updateAnimation(entity.walk,IronBuilderModelAnimation.walk,ageInTicks);
 		updateAnimation(entity.build,IronBuilderModelAnimation.place,ageInTicks);
 	}
 

@@ -3,7 +3,8 @@
 	"package": "net.ptera.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"CarvedPumpkinMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
