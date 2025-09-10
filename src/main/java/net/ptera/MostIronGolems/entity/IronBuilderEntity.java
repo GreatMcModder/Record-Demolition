@@ -14,7 +14,6 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.PathAwareEntity;
-import net.minecraft.entity.passive.CamelEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -90,7 +89,7 @@ public class IronBuilderEntity extends PathAwareEntity {
         this.clearVoid();
         this.setPosition(this.getX(),this.dataTracker.get(START_Y),this.getZ());
         this.setYaw(90);
-        if (this.age % 20 == 0 && !this.isAiDisabled()) {
+        if (this.age % 5 == 0 && !this.isAiDisabled() && this.age<=1200) {
             walk.stop();
             walk.setRunning(false,this.age);
             this.buildGolem(this.getBlockPos().up(7));
@@ -98,7 +97,7 @@ public class IronBuilderEntity extends PathAwareEntity {
             walk.startIfNotRunning(this.age);
             walk.setRunning(true,this.age);
         }
-        if (this.age%20==1) {
+        if (this.age%5==1) {
             this.setVelocity(Vec3d.ZERO);
         }
     }
