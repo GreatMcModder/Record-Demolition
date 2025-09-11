@@ -2,7 +2,6 @@
 	"schemaVersion": 1,
 	"id": "record-breaker",
 	"version": "${version}",
-	"accessWidener": "record-breaker.accesswidener",
 	"name": "Record Breaker",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [

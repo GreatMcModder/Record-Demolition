@@ -4,9 +4,7 @@
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"ExampleMixin",
-		"CarvedPumpkinMixin",
-		"RegistriesAccessor",
-		"PlayerMixin"
+		"CarvedPumpkinMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
