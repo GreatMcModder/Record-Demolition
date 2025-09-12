@@ -5,6 +5,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.ptera.MostIronGolems.items.IronWand;
+import net.ptera.MostIronGolems.items.TimerItem;
 
 import static net.ptera.RecordBreaker.MOD_ID;
 
@@ -13,5 +14,6 @@ public class ModItems {
         return Registry.register(Registries.ITEM,id,item);
     }
     public static Item IRON_WAND = register(Identifier.of(MOD_ID,"iron_wand"),new IronWand(new Item.Settings()));
+    public static Item TIMER = register(Identifier.of(MOD_ID,"timer"),new TimerItem(new Item.Settings()));
     public static void init() {}
 }

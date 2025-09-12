@@ -23,14 +23,6 @@ public class IronWand extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
         NbtCompound nbtComponent = stack.getOrCreateNbt();
-        if (user.isSneaking()) {
-            if (nbtComponent.getDouble("Mode") == 1) {
-                nbtComponent.putDouble("Mode", 0);
-            } else {
-                nbtComponent.putDouble("Mode", nbtComponent.getDouble("Mode") + 1);
-            }
-            stack.setNbt(nbtComponent);
-        } else {
             if (nbtComponent.getDouble("Mode")==0) {
                 if (world instanceof ServerWorld serverWorld) {
                     IronBuilderEntity builder = ModEntities.IRON_BUILDER.create(serverWorld);
@@ -43,10 +35,9 @@ public class IronWand extends Item {
             } else {
                 if (world instanceof ServerWorld serverWorld) {
                     ModPersistentState state = ModPersistentState.getState(serverWorld);
-                    user.sendMessage(Text.of("10^" + (state.currentEvolution * (state.currentEvolution - 1))));
+                    user.sendMessage(Text.of("10^" + ((long) state.currentEvolution * (state.currentEvolution - 1))));
                 }
             }
-        }
         return super.use(world, user, hand);
     }
 }
