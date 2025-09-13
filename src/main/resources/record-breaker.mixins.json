@@ -6,7 +6,8 @@
 		"ExampleMixin",
 		"CarvedPumpkinMixin",
 		"RegistriesAccessor",
-		"PlayerMixin"
+		"PlayerMixin",
+		"IronRenderMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
